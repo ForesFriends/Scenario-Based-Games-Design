@@ -1,0 +1,158 @@
+<html>
+
+	<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+			table, th, td { 
+				border: 1px solid black;
+			}
+			table.PerformanceTable {
+				table-layout: fixed;
+				width: 30px;
+			}
+		    table.PerformanceTable td.PerformanceCell {
+				width: 30px;
+				}
+			body{
+				
+				background-repeat: no-repeat, repeat;
+			}
+			img{
+				width: 300px;
+				height: 170px;
+				overflow: hidden;
+			}
+			button {
+				width: 100%;
+				height: 200px;
+				padding: 10;
+				overflow: hidden;
+				background: none;
+			}
+			button{
+			  background-color:white;
+			}
+			
+			.correct_highlight {
+				background-color:green
+			}
+			.wrong_highlight {
+				background-color:red
+			}
+			p{
+				 display: block;
+				  margin-top: 1em;
+				  margin-bottom: 1em;
+				  margin-left: 0;
+				  margin-right: 0;
+				  font-size: 25px;
+				  font-family: "Lucida Console", Courier, monospace;
+				  color: red;
+			}
+	</style>
+	<script>
+		jQuery( document ).ready(function($) {
+		
+			$('body').click(function(){
+				$('#popup')[0].style.visibility = 'hidden'
+			})
+			$("button").click(function(event){
+			event.stopPropagation();
+				console.log($(this))
+				if(($(this)[0].className == 'correct') || ($(this)[0].className == 'correct_highlight')) {
+				$(this)[0].className = 'correct_highlight' 
+				}
+				else {
+					$(this)[0].className = 'wrong_highlight'
+				}	
+			});
+			
+			  $('.example-popover').popover({
+				container: 'body'
+			  })
+			
+			
+			  $('[data-toggle="popover"]').popover()
+			
+			$('.popover-dismiss').popover({
+			  trigger: 'focus'
+			})
+		});
+	</script>
+	</head>
+	<body>
+		<div>
+			<p> Click on each image to know what can harm animals</p>
+		</div>
+		<div>
+			<table>
+				<tr>
+					<td>
+						<button type="button" class="correct" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom"  data-trigger="focus" title="Animals will be safe &#128040;" data-content="Look at the kid he joined the hand to clean the ocean, do you ?" >
+						<img src = "https://cdn.pixabay.com/photo/2019/10/10/18/16/environment-4540209_960_720.jpg"
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="correct" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left" data-trigger="focus" title="Animals will be safe &#128040;" data-content="Look at the volunteers they joined the hands to clean up the ocean, you can also join the hand and may volunteer when you grew up">
+						<img src = "https://www.nps.gov/subjects/oceans/images/F24392CC-DADD-E976-7CF5A894E9F83C08LoResProxy.jpg?maxwidth=650&autorotate=false" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="wrong" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left"  data-trigger="focus" title="Animals will be Harmed &#128040;" data-content="Look how the animal is distressed with the thread around its neck, dont throw waste in ocean when you go to beach" >
+						<img src = "https://storage.needpix.com/rsynced_images/pollution-1951463_1280.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+				<tr>
+				<tr>
+					<td>
+						<button type="button" class="wrong" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Animals will be harmed &#128040;" data-content="Look at the turtle is struggling with the plastic, its harming the turtle" >
+						<img src = "https://p0.pikrepo.com/preview/1024/192/brown-and-white-sea-turtle-in-water.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="wrong" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left" data-trigger="focus" title="Animals will be Harmed &#128040;" data-content="Throwing the garbage on the shore is not safe, Be mindful when you are littering in the beach next time" >
+						<img src = "https://p0.pikrepo.com/preview/167/55/garbage-on-seashore.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="wrong" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="top" data-trigger="focus" title="Animals will be Harmed &#128040;" data-content="Can you see that!!! They are dumping harmful waste into the ocean that will harm animals." >
+						<img src = "https://p0.pikrepo.com/preview/322/246/photo-of-gray-trailer-truck-near-person-working-on-yellow-hazard-labeled-barrel-on-above-water-surface.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+				<tr>
+				<tr>
+					<td>
+						<button type="button" class="correct" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="top" data-trigger="focus" title="Animals will be safe &#128040;" data-content="Look how people are cleaning up the waste from the ocean, you can also do that, next time when you visit any beach, if you spot any waste put it in a trash">
+						<img src = "https://upload.wikimedia.org/wikipedia/commons/5/51/Beach_Clean_up_during_DWH_%288743615375%29.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="correct" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left" data-trigger="focus" title="Animals will be Safe &#128040;" data-content="ALooks how kids are cleaning up the ocean, you too can join the hand in doing so" >
+						<img src = "https://get.pxhere.com/photo/beach-sea-coast-water-sand-ocean-people-play-vacation-surf-body-of-water-children-ghana-mussels-890795.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="wrong" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="top" data-trigger="focus" title="Animals will be Harmed &#128040;" data-content="Have you see the dead fish on the hand, caused by polluting the water" >
+						<img src = "https://p0.pikrepo.com/preview/418/638/gray-raw-fish-on-brown-sand.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+				<tr>
+			
+			</table>
+			<br><p style="color:red;"> Red Button: Animals are harmed.<br>
+			<p style="color:Green;">Green Button: You are helping animals
+		</div>
+	
+	</body>
+</html>
