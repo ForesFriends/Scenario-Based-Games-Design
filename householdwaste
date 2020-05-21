@@ -1,0 +1,157 @@
+<html>
+	<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+			table, th, td { 
+				border: 1px solid black;
+			}
+			table.PerformanceTable {
+				table-layout: fixed;
+				width: 30px;
+			}
+		    table.PerformanceTable td.PerformanceCell {
+				width: 30px;
+				}
+			body{
+				
+				background-repeat: no-repeat, repeat;
+			}
+			img{
+				width: 300px;
+				height: 170px;
+				overflow: hidden;
+			}
+			button {
+				width: 100%;
+				height: 200px;
+				padding: 10;
+				overflow: hidden;
+				background: none;
+			}
+			button{
+			  background-color:white;
+			}
+			
+			.correct_highlight {
+				background-color:green
+			}
+			.wrong_highlight {
+				background-color:red
+			}
+			p{
+				 display: block;
+				  margin-top: 1em;
+				  margin-bottom: 1em;
+				  margin-left: 0;
+				  margin-right: 0;
+				  font-size: 25px;
+				  font-family: "Lucida Console", Courier, monospace;
+				  color: red;
+			}
+	</style>
+	<script>
+		jQuery( document ).ready(function($) {
+		
+			$('body').click(function(){
+				$('#popup')[0].style.visibility = 'hidden'
+			})
+			$("button").click(function(event){
+			event.stopPropagation();
+				console.log($(this))
+				if(($(this)[0].className == 'correct') || ($(this)[0].className == 'correct_highlight')) {
+				$(this)[0].className = 'correct_highlight' 
+				}
+				else {
+					$(this)[0].className = 'wrong_highlight'
+				}	
+			});
+			
+			  $('.example-popover').popover({
+				container: 'body'
+			  })
+			
+			
+			  $('[data-toggle="popover"]').popover()
+			
+			$('.popover-dismiss').popover({
+			  trigger: 'focus'
+			})
+		});
+	</script>
+	</head>
+	<body>
+		<div>
+			<p> Click on each image to know what can harm animals</p>
+		</div>
+		<div>
+			<table>
+				<tr>
+					<td>
+						<button type="button" class="correct" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom"  data-trigger="focus" title="Animals will be safe &#128040;" data-content="Household waste into the trash vehicle thats great" >
+						<img src = "https://get.pxhere.com/photo/home-move-house-mover-truck-help-heavy-courier-box-Freight-Distribution-residence-worker-cartoon-delivery-packing-job-work-relocation-service-business-mode-of-transport-motor-vehicle-transport-illustration-vehicle-garbage-truck-car-moving-art-games-1585741.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="correct" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left" data-trigger="focus" title="Animals will be safe &#128040;" data-content="Thats Great!! kid cleaning up the litter along with the father and Grand Father , Even you want to so the same ">
+						<img src = "https://i.pinimg.com/originals/b5/22/5e/b5225e017e638b39858d9e0bb13d0266.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="correct" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left"  data-trigger="focus" title="Animals will be safe &#128040;" data-content="USing the trash bins to dispose the waste thats the right thing todo" >
+						<img src = "https://cheapestloadofrubbish.com.au/wp-content/uploads/2020/03/council-clean-img.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+				<tr>
+				<tr>
+					<td>
+						<button type="button" class="wrong" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="Animals will be harmed &#128040;" data-content="By throwing the litter, it affected the bear, its seriously harms animals" >
+						<img src = "https://bearwise.org/wp-content/uploads/2017/05/bear-in-cup.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="wrong" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left" data-trigger="focus" title="Animals will be Harmed &#128040;" data-content="Having your cup of soup and throwing on the road is not corect, its not safe" >
+						<img src = "https://the-riotact.com/wp-content/uploads/2019/10/coffee-cup-littering-810x608.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="wrong" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="top" data-trigger="focus" title="Animals will be Harmed &#128040;" data-content="Throwing litter on the road is not safe for everyone" >
+						<img src = "https://www.arrivealive.mobi/ckfinder/userfiles/images/Roadside-Litter-Environmental-Protection-and-Road-Safety/Litterers.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+				<tr>
+				<tr>
+					<td>
+						<button type="button" class="correct" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="top" data-trigger="focus" title="Animals will be safe &#128040;" data-content="Using the right bin for disposing waste thats always good for environment">
+						<img src = "https://graphicriver.img.customer.envatousercontent.com/files/266355565/preview.jpg?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=35bf7dda93938c361841e824a6e78ee1" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="correct" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="left" data-trigger="focus" title="Animals will be safe &#128040;" data-content="Check what the kid is doing he is disposing the waste in the bin, Do the same when you have your lolly" >
+						<img src = "https://www.monash.vic.gov.au/files/assets/public/our-services/rubbish-recycling/recycling.jpg?w=690" class="tooltip1">
+						</img>
+						</button>
+					</td>
+					<td>
+						<button type="button" class="wrong" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="top" data-trigger="focus" title="Animals will be Harmed &#128040;" data-content="By putting the garbage every where is not safe for animals and environment" >
+						<img src = "https://blog.ukonserve.com/wp-content/uploads/plastic-utensil-waste.jpg" class="tooltip1">
+						</img>
+						</button>
+					</td>
+				<tr>
+			
+			</table>
+			<br><p style="color:red;"> Red Button: Animals are harmed.<br>
+			<p style="color:Green;">Green Button: You are helping animals
+		</div>
+	
+	</body>
+</html>
